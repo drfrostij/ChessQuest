@@ -31,6 +31,13 @@ import tkinter
 
 #Encrypting or checking user data
 
+def python_encodehash_password(password):
+    # Hash the password using bcrypt
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed_password
+
+
 
 def encryptionandstorage(username, password):
     print(username, "is the username that has been entered")
